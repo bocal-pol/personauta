@@ -6,16 +6,33 @@
 
 body {
   margin: 0;
-  width: 260px;
+  width: 320px;
+  max-height: 540px;
+  overflow-y: auto;
 }
 
 #app {
-  padding: 0.5rem;
+  padding: 0.5rem 0.6rem;
 }
 
 h1 {
   font-size: 0.9rem;
   margin: 0.25rem 0.25rem 0.5rem;
+}
+
+h2 {
+  font-size: 0.8rem;
+  margin: 0.9rem 0 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+h3 {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0.7rem 0 0.3rem;
 }
 
 ul.space-list {
@@ -68,4 +85,94 @@ li.space-row button:hover {
 .settings-link {
   font-size: 0.78rem;
   margin: 0.6rem 0.25rem 0.1rem;
+}
+
+hr.sep {
+  border: none;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  margin: 0.6rem 0;
+}
+
+ul.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+li.entry-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 7px;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.entry-title {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #94a3b8;
+  flex-shrink: 0;
+}
+
+.dot.open {
+  background: #22c55e;
+}
+
+.remove-btn {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.remove-btn:hover {
+  opacity: 1;
+}
+
+.folder-swatch {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.empty-state {
+  opacity: 0.6;
+  font-size: 0.76rem;
+  padding: 0.2rem 0;
+}
+
+button#clean-space-btn {
+  width: 100%;
+  margin-top: 0.7rem;
+  padding: 0.45rem;
+  border-radius: 7px;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
 }
