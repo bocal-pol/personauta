@@ -1,0 +1,112 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, Segoe UI, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 640px;
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.space-card {
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.space-card .row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.space-card input[type='text'] {
+  padding: 0.3rem 0.5rem;
+}
+
+.space-card input[type='text'].name-input {
+  flex: 1;
+}
+
+.space-card input[type='text'].emoji-input {
+  width: 3rem;
+  text-align: center;
+}
+
+.space-card input[type='color'] {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.space-card textarea {
+  width: 100%;
+  min-height: 4.5rem;
+  font-family: inherit;
+  padding: 0.4rem 0.5rem;
+  resize: vertical;
+}
+
+.space-card .actions {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.82rem;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.danger {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+#add-space-btn {
+  margin-top: 0.4rem;
+}
+
+.shortcuts-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+
+#save-status {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  min-height: 1.2em;
+}
