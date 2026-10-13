@@ -3,7 +3,7 @@ import { decideSwitch, spaceIdForCommand, canAddSpace } from '@/lib/space-rules'
 import type { Space } from '@/lib/spaces-storage';
 
 function space(overrides: Partial<Space> = {}): Space {
-  return { id: 's1', name: 'Test', emoji: '📁', color: '#000000', homeUrls: [], ...overrides };
+  return { id: 's1', name: 'Test', emoji: '📁', color: '#000000', ...overrides };
 }
 
 describe('decideSwitch', () => {
@@ -17,16 +17,16 @@ describe('decideSwitch', () => {
     expect(result).toEqual({ action: 'focus', windowId: 42 });
   });
 
-  it('recrée si la fenêtre mappée a été fermée entretemps', () => {
-    const spaces = [space({ id: 'a', homeUrls: ['https://example.com'] })];
+  it('demande une création si la fenêtre mappée a été fermée entretemps', () => {
+    const spaces = [space({ id: 'a' })];
     const result = decideSwitch('a', spaces, { a: 42 }, new Set()); // 42 absent des fenêtres ouvertes
-    expect(result).toEqual({ action: 'create', urls: ['https://example.com'] });
+    expect(result).toEqual({ action: 'create' });
   });
 
-  it('crée une fenêtre vierge (urls undefined) si aucune URL d’accueil', () => {
-    const spaces = [space({ id: 'a', homeUrls: [] })];
+  it('demande une création si l’espace n’a jamais eu de fenêtre', () => {
+    const spaces = [space({ id: 'a' })];
     const result = decideSwitch('a', spaces, {}, new Set());
-    expect(result).toEqual({ action: 'create', urls: undefined });
+    expect(result).toEqual({ action: 'create' });
   });
 });
 

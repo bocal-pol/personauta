@@ -1,6 +1,6 @@
 {
   "name": "personauta",
-  "description": "Espaces d'onglets façon Arc (perso/pro/loisir), fenêtre dédiée par espace, bascule via popup ou raccourcis clavier.",
+  "description": "Espaces d'onglets façon Arc (perso/pro/loisir) avec épinglés et dossiers propres à chaque espace, fenêtre dédiée par espace, bascule via popup ou raccourcis clavier.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

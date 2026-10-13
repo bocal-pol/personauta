@@ -5,8 +5,8 @@ export default defineConfig({
   manifest: {
     name: 'Personauta',
     description:
-      "Espaces d'onglets façon Arc (perso/pro/loisir, jusqu'à 6) : une fenêtre Chrome dédiée par espace, bascule via le popup ou des raccourcis clavier.",
-    permissions: ['storage'],
+      "Espaces d'onglets façon Arc (perso/pro/loisir, jusqu'à 6) : une fenêtre Chrome dédiée par espace, bascule via le popup ou des raccourcis clavier. Chaque espace a ses propres onglets épinglés (max 9) et dossiers d'onglets à garder.",
+    permissions: ['storage', 'tabs', 'tabGroups', 'contextMenus'],
     commands: {
       'switch-space-1': {
         suggested_key: { default: 'Ctrl+Shift+1' },

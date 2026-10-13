@@ -3,12 +3,13 @@ import { MAX_SPACES } from '@/lib/spaces-storage';
 
 export type SwitchDecision =
   | { action: 'focus'; windowId: number }
-  | { action: 'create'; urls: string[] | undefined }
+  | { action: 'create' }
   | { action: 'not-found' };
 
 /**
  * Décide quoi faire pour basculer vers un espace, sans jamais appeler l'API chrome.windows —
- * reste pure et testable. L'appelant (background.ts) exécute l'action retournée.
+ * reste pure et testable. L'appelant (background.ts) exécute l'action retournée ; dans le cas
+ * 'create', c'est lui qui peuple la nouvelle fenêtre avec les épinglés/dossiers de l'espace.
  */
 export function decideSwitch(
   spaceId: string,
@@ -24,7 +25,7 @@ export function decideSwitch(
     return { action: 'focus', windowId: existingWindowId };
   }
 
-  return { action: 'create', urls: space.homeUrls.length > 0 ? space.homeUrls : undefined };
+  return { action: 'create' };
 }
 
 const COMMAND_PATTERN = /^switch-space-([1-6])$/;

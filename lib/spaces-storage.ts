@@ -7,17 +7,15 @@ export interface Space {
   /** Un seul emoji, affiché dans le popup/les options. Purement visuel : Chrome n'expose aucune API pour colorer une fenêtre. */
   emoji: string;
   color: string;
-  /** URLs rouvertes automatiquement si la fenêtre de l'espace a été fermée. */
-  homeUrls: string[];
 }
 
 export const MAX_SPACES = 6;
 
 function defaultSpaces(): Space[] {
   return [
-    { id: crypto.randomUUID(), name: 'Perso', emoji: '🏠', color: '#2563eb', homeUrls: [] },
-    { id: crypto.randomUUID(), name: 'Pro', emoji: '💼', color: '#059669', homeUrls: [] },
-    { id: crypto.randomUUID(), name: 'Loisir', emoji: '🎮', color: '#d97706', homeUrls: [] },
+    { id: crypto.randomUUID(), name: 'Perso', emoji: '🏠', color: '#2563eb' },
+    { id: crypto.randomUUID(), name: 'Pro', emoji: '💼', color: '#059669' },
+    { id: crypto.randomUUID(), name: 'Loisir', emoji: '🎮', color: '#d97706' },
   ];
 }
 

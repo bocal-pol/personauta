@@ -61,18 +61,68 @@ h1 {
   background: none;
 }
 
-.space-card textarea {
-  width: 100%;
-  min-height: 4.5rem;
-  font-family: inherit;
-  padding: 0.4rem 0.5rem;
-  resize: vertical;
-}
-
 .space-card .actions {
   display: flex;
   gap: 0.4rem;
   justify-content: flex-end;
+}
+
+.space-content {
+  margin-top: 0.3rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.space-content h4 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0.5rem 0 0.3rem;
+}
+
+.pinned-row,
+.kept-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.82rem;
+}
+
+.pinned-row span,
+.kept-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folder-card {
+  border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.folder-card .row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.folder-card input[type='text'] {
+  flex: 1;
+  padding: 0.25rem 0.4rem;
+}
+
+.folder-card select {
+  padding: 0.25rem 0.3rem;
+}
+
+.folder-tabs {
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  opacity: 0.75;
 }
 
 button {
